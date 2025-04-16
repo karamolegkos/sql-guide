@@ -114,7 +114,8 @@ Here’s what the SQL command looks like to create a table:
 CREATE TABLE Books (
   id INT,
   title VARCHAR(100),
-  author VARCHAR(100)
+  author VARCHAR(100),
+  PRIMARY KEY (ID)
 );
 -- You can also use something like this: CREATE TABLE IF NOT EXISTS Books
 ```
@@ -158,13 +159,14 @@ CREATE TABLE IF NOT EXISTS People (
   id INT,
   name VARCHAR(100),
   age INT,
-  city VARCHAR(100)
+  city VARCHAR(100),
+  PRIMARY KEY (ID)
 );
 
 -- Let's add the above data with INSERT as well:
-INSERT INTO Books VALUES (1, 'Alice', 30, 'New York');
-INSERT INTO Books VALUES (1, 'Bob', 25, 'London');
-INSERT INTO Books VALUES (1, 'Charlie', 35, 'Paris');
+INSERT INTO People VALUES (1, 'Alice', 30, 'New York');
+INSERT INTO People VALUES (1, 'Bob', 25, 'London');
+INSERT INTO People VALUES (1, 'Charlie', 35, 'Paris');
 ```
 
 Let's try some `SELECT` Queries:
@@ -183,7 +185,7 @@ SELECT name, city FROM People;
 ```sql
 SELECT name AS full_name FROM People;
 -- `AS` gives a column a new temporary name when showing results
--- You can also try this: SELECT title AS 'Book Title' FROM People;
+-- You can also try this: SELECT name AS 'Full Name' FROM People;
 ```
 
 ## Filtering with `WHERE`
