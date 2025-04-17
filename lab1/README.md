@@ -35,6 +35,7 @@ docker rm -f my-own-mysql
 - **[Basic Logic](#basic-logic)**.
 - **[Sorting Results](#sorting-results)**.
 - **[Practice Time](#practice-time)**.
+- **[Next Steps](#next-steps)**.
 
 ## What is SQL?
 SQL stands for **Structured Query Language**. It is a special language we use to communicate with databases.
