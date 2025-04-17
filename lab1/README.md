@@ -152,6 +152,13 @@ Let’s say we have this people table: `People`
 | 1 | Alice | 30 | New York |
 | 2 | Bob | 25 | London |
 | 3 | Charlie | 35 | Paris |
+| 4 | Dana | 28 | London |
+| 5 | Eva | 22 | Berlin |
+| 6 | Frank | 40 | New York |
+| 7 | Grace | 31 | Rome |
+| 8 | Hassan | 29 | Cairo |
+| 9 | Ivy | 27 | Paris |
+| 10 | Jack | 33 | London |
 
 Let's also add it in the Database:
 ```sql
@@ -165,8 +172,15 @@ CREATE TABLE IF NOT EXISTS People (
 
 -- Let's add the above data with INSERT as well:
 INSERT INTO People VALUES (1, 'Alice', 30, 'New York');
-INSERT INTO People VALUES (1, 'Bob', 25, 'London');
-INSERT INTO People VALUES (1, 'Charlie', 35, 'Paris');
+INSERT INTO People VALUES (2, 'Bob', 25, 'London');
+INSERT INTO People VALUES (3, 'Charlie', 35, 'Paris');
+INSERT INTO People VALUES (4, 'Dana', 28, 'London');
+INSERT INTO People VALUES (5, 'Eva', 22, 'Berlin');
+INSERT INTO People VALUES (6, 'Frank', 40, 'New York');
+INSERT INTO People VALUES (7, 'Grace', 31, 'Rome');
+INSERT INTO People VALUES (8, 'Hassan', 29, 'Cairo');
+INSERT INTO People VALUES (9, 'Ivy', 27, 'Paris');
+INSERT INTO People VALUES (10, 'Jack', 33, 'London');
 ```
 
 Let's try some `SELECT` Queries:
@@ -189,6 +203,49 @@ SELECT name AS full_name FROM People;
 ```
 
 ## Filtering with `WHERE`
+
+Now that you know how to view data using `SELECT`, let’s learn how to **narrow it down** using the `WHERE` clause. `WHERE` tells the database: **"Only show me the rows that match certain conditions".**
+
+You use `WHERE` when you don’t want everything, just the data that meets specific rules.
+
+Basic Format:
+```sql
+SELECT column1, column2 FROM table_name
+WHERE condition;
+```
+
+Let's try some `WHERE` Queries on the `People` table:
+1. Find People Over 30:
+```sql
+SELECT * FROM People
+WHERE age > 30;
+-- This shows only people whose age is greater than 30.
+```
+
+2. Find People in London:
+```sql
+SELECT name, city FROM People
+WHERE city = 'London';
+-- This shows the name and city of people who live in London.
+```
+
+3. Combine Conditions:
+```sql
+SELECT * FROM People
+WHERE city = 'London' AND age < 30;
+-- This shows people who live in London and are under 30 years old.
+```
+
+### Common Symbols in `WHERE`
+
+| Symbol  | Meaning | Example |
+| ------------- | ------------- | ------------- |
+| = | Equal to | `city = 'Paris'` |
+| <> | Not equal to | `city <> 'Paris'` |
+| > | Greater than | `age > 25` |
+| < | Less than | `age < 40` |
+| AND | Both must be true | `age > 25 AND city = 'NY'` |
+| OR | One (or both) must be true | `age < 20 OR age > 35` |
 
 ## Basic Logic
 
