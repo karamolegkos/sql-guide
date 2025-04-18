@@ -432,7 +432,7 @@ Based on the description below, **identify the tables**, their **columns**, and 
 - The system should track the **assignments** of employees to AGVs.
 
 ### Goal
-Design a schema that includes at least the following five tables:
+**Design a schema** that includes at least the following five tables:
 - AGVs
 - Employees
 - Storage_Units
