@@ -55,17 +55,18 @@ To connect tables, we use two types of keys:
 
 ### Example Schema
 In our school database, we have three tables:
-1. `Students`
+
+#### 1. `Students`
 
 Stores information about students.
 - **Primary key**: `student_id`
 
-2. `Courses`
+#### 2. `Courses`
 
 Stores information about courses.
 - **Primary key**: `course_id`
 
-3. `Enrollments`
+#### 3. `Enrollments`
 
 Connects students to courses and stores their grades.
 - Has two foreign keys:
@@ -73,7 +74,7 @@ Connects students to courses and stores their grades.
   - `course_id` → links to `Courses`.
 
 How They're Connected
-```diff
+```
 Students      Enrollments       Courses
 ----------    -------------     ----------
 student_id ←  student_id        
