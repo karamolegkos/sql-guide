@@ -169,4 +169,162 @@ WHERE Enrollments.enrollment_id IS NULL;
 
 ## Aggregation Functions
 
-TODO
+So far, you've learned how to select and filter rows. But what if you want to summarize your data?
+
+Aggregation functions let you do just that! They help you **calculate values** across multiple rows — like totals, averages, counts, and more.
+
+Common Aggregation Functions
+
+| Function | What It Does | Example |
+| --- | --- | --- |
+| `COUNT()` | Counts how many rows | `COUNT(*)` |
+| `SUM()` | Adds up numeric values | `SUM(grade)` |
+| `AVG()` | Calculates the average | `AVG(grade)` |
+| `MIN()` | Finds the smallest value | `MIN(grade)` |
+| `MAX()` | Finds the largest value | `MAX(grade)` |
+
+### Examples Using the `Enrollments` table
+
+1. Count how many enrollments exist:
+```sql
+SELECT COUNT(*) FROM Enrollments;
+-- This tells us how many total enrollment records are in the table.
+```
+
+2. Find the average grade across all students:
+```sql
+SELECT AVG(grade) FROM Enrollments;
+-- This calculates the overall average grade.
+```
+
+3. Find the highest grade in the system:
+```sql
+SELECT MAX(grade) FROM Enrollments;
+-- Shows the top score among all enrollments.
+```
+
+4. See the total number of students enrolled in Course 101:
+```sql
+SELECT COUNT(*) FROM Enrollments
+WHERE course_id = 101;
+-- This counts how many students are enrolled in Mathematics (Course 101).
+```
+
+> Aggregation functions work on groups of rows, but they return a single result — unless you combine them with GROUP BY, which we’ll look at next!
+
+## `GROUP BY` and `HAVING`
+Aggregation functions like `COUNT()` or `AVG()` are great — but what if you want to group your results by a specific category? That’s where `GROUP BY` comes in. `GROUP BY` lets you group rows that share a value in a specific column, and then apply aggregation functions **to each group**. Think of it like this: **"Group the data by this column — and summarize each group."**
+
+Basic Format:
+```sql
+SELECT column, AGGREGATE_FUNCTION(column)
+FROM table
+GROUP BY column;
+```
+
+### Examples
+1. How many students are enrolled in each course?
+```sql
+SELECT course_id, COUNT(*) AS total_enrollments
+FROM Enrollments
+GROUP BY course_id;
+-- This shows each course along with how many students are taking it.
+```
+
+2. What is the average grade for each course?
+```sql
+SELECT course_id, AVG(grade) AS average_grade
+FROM Enrollments
+GROUP BY course_id;
+-- This gives you the average grade per course.
+```
+
+#### Enter: `HAVING`
+
+You’ve used `WHERE` to filter **rows**, but `WHERE` **works before grouping**. If you want to filter **after grouping**, you need `HAVING`.
+> Use `HAVING` to filter groups.
+
+3. Find courses with more than 3 enrollments:
+```sql
+SELECT course_id, COUNT(*) AS total
+FROM Enrollments
+GROUP BY course_id
+HAVING COUNT(*) > 3;
+-- This only shows courses where more than 3 students are enrolled.
+```
+
+### `WHERE` vs `HAVING`
+
+| Clause | Filters... | Example |
+| --- | --- | --- |
+| `WHERE` | rows (**before** grouping) | `WHERE course_id = 101` |
+| `HAVING` | groups (**after** grouping) | `HAVING COUNT(*) > 5` |
+
+## `UPDATE` and `DELETE`
+
+So far, you’ve learned how to view and analyze data. Now it’s time to learn how to change it. In SQL, we use `UPDATE` to change existing data and `DELETE` to remove it. 
+> Be careful with these — they modify your database!
+
+### `UPDATE` — Change Existing Data
+
+The `UPDATE` statement lets you modify one or more columns in one or more rows.
+```sql
+UPDATE table_name
+SET column1 = value1, column2 = value2
+WHERE condition;
+```
+> Always use a `WHERE` clause to avoid updating every row by mistake!
+
+#### `UPDATE` Examples
+1. Update a student’s city:
+```sql
+UPDATE Students
+SET age = 31
+WHERE student_id = 3;
+-- Changes the age of student with ID 3 to 31 years old.
+```
+
+2. Increase a grade by 5 points:
+```sql
+UPDATE Enrollments
+SET grade = grade + 5
+WHERE enrollment_id = 2;
+-- Gives a grade boost to one enrollment.
+```
+
+### `DELETE` — Remove Data
+
+The `DELETE` statement removes rows from a table.
+
+Basic Format:
+```sql
+DELETE FROM table_name
+WHERE condition;
+```
+> ❗ Always double-check your `WHERE` clause before running a delete.
+
+#### `DELETE` Examples
+
+1. Remove a student from the database:
+```sql
+DELETE FROM Enrollments
+WHERE student_id = 5 AND course_id = 104;
+-- Remove the student with ID 5 from the course with ID 104.
+```
+
+2. Delete all enrollments with a grade below 50:
+```sql
+DELETE FROM Enrollments
+WHERE grade < 50;
+-- Removes all failing grades.
+```
+> In case you get the error: `You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column. To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.` Do the followiing: 1. Go to `Edit` --> `Preferences`, 2. Click `SQL Editor` tab and uncheck `Safe Updates` check box, 3. Go to `Query` --> `Reconnect to Server` --> Use your database again and try again.
+
+### What If You Forget WHERE?
+Without a `WHERE` clause:
+```sql
+DELETE FROM Students;
+-- This deletes **every student**. Be careful!
+```
+> Tip: When testing, use a SELECT with the same WHERE first, to see what you'll be changing or deleting.
+
