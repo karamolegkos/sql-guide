@@ -36,7 +36,8 @@ docker rm -f my-own-mysql
 - **[`GROUP BY` and `HAVING`](#group-by-and-having)**.
 - **[SQL Subqueries](#sql-subqueries)**
 - **[`UPDATE` and `DELETE`](#update-and-delete)**.
-- **[Practice Time](#practice-time)**.
+- **[Practice Time 1](#practice-time-1)**.
+- **[Practice Time 2](#practice-time-2)**.
 - **[Next Steps](#next-steps)**.
 
 ## Relational Schema
@@ -386,7 +387,36 @@ DELETE FROM Students;
 ```
 > Tip: When testing, use a SELECT with the same WHERE first, to see what you'll be changing or deleting.
 
-## Practice Time
+## Practice Time 1
+### Step 1: Installation
+You’ll be using the `SchoolDB` database and its `Students`, `Courses`, and `Enrollments` tables from **[this](./example-schema.sql)** file.
+
+### Step 2: `JOIN` Practice
+1. Show each student's full name and the names of the courses they are enrolled in.
+2. List all students and their grades in "Mathematics".
+3. Show the names of all instructors and how many students are enrolled in their courses.
+4. Display all students who **are not enrolled in any course**.
+
+### Step 3: Aggregation + `GROUP BY` + `HAVING`
+5. Show the **average grade** for each course.
+6. Show the courses with an average grade **greater than 85**.
+7. For each student, show the total number of courses they are enrolled in.
+8. List the students who are enrolled in **more than 2 courses**.
+
+### Step 4: `UPDATE` & `DELETE`
+9. Update **Hannah Martinez**'s grade in "Biology" to 95.00.
+10. Increase all grades in "Physics" by 5 points (maximum of 100).
+11. Delete all enrollment records where the grade is below 70.
+12. Delete all enrollments for **students older than 24**.
+
+### Step 5: Subqueries
+13. Show the students who have the **highest grade** across all courses.
+14. List the courses that **no students are enrolled** in.
+15. Show the student(s) who have the **highest number of enrollments**.
+16. Show all instructors who teach a course where the **average grade** is **below 80**.
+17. Show students who **are enrolled** in **both "Mathematics" and "Biology"**.
+
+## Practice Time 2
 
 
 ## Next Steps
