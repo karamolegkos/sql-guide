@@ -34,7 +34,10 @@ docker rm -f my-own-mysql
 - **[Introduction to `JOIN`](#introduction-to-join)**.
 - **[Aggregation Functions](#aggregation-functions)**.
 - **[`GROUP BY` and `HAVING`](#group-by-and-having)**.
+- **[SQL Subqueries](#sql-subqueries)**
 - **[`UPDATE` and `DELETE`](#update-and-delete)**.
+- **[Practice Time](#practice-time)**.
+- **[Next Steps](#next-steps)**.
 
 ## Relational Schema
 
@@ -260,6 +263,61 @@ HAVING COUNT(*) > 3;
 | `WHERE` | rows (**before** grouping) | `WHERE course_id = 101` |
 | `HAVING` | groups (**after** grouping) | `HAVING COUNT(*) > 5` |
 
+## SQL Subqueries
+
+A subquery is a query **inside another query**. Think of it like asking a question **inside** a bigger question. You can use subqueries when you need the result of one query **to help** with another.
+
+Basic Format:
+```sql
+SELECT column
+FROM table
+WHERE something IN (SELECT ...);
+```
+The inner query runs **first**, and its result is passed to the outer query.
+
+### Examples
+
+1. Students Enrolled in Course 101:
+```sql
+SELECT first_name, last_name
+FROM Students
+WHERE student_id IN (
+    SELECT student_id
+    FROM Enrollments
+    WHERE course_id = 101
+);
+-- This shows the names of all students enrolled in Mathematics.
+```
+Here’s what’s happening:
+- Inner query: Finds all `student_ids` in course 101.
+- Outer query: Finds names of those students.
+
+2. Courses with Average Grade Above 85:
+```sql
+SELECT course_name
+FROM Courses
+WHERE course_id IN (
+    SELECT course_id
+    FROM Enrollments
+    GROUP BY course_id
+    HAVING AVG(grade) > 85
+);
+-- This shows the names of high-performing courses.
+```
+
+3. Students With the Highest Grade in the System:
+```sql
+SELECT first_name, last_name
+FROM Students
+WHERE student_id IN (
+    SELECT student_id
+    FROM Enrollments
+    WHERE grade = (SELECT MAX(grade) FROM Enrollments)
+);
+-- Finds student(s) who achieved the top grade.
+```
+> Tip: You can use subqueries in `SELECT`, `FROM`, or `WHERE` clauses — but `WHERE` is the most common when starting out.
+
 ## `UPDATE` and `DELETE`
 
 So far, you’ve learned how to view and analyze data. Now it’s time to learn how to change it. In SQL, we use `UPDATE` to change existing data and `DELETE` to remove it. 
@@ -328,3 +386,12 @@ DELETE FROM Students;
 ```
 > Tip: When testing, use a SELECT with the same WHERE first, to see what you'll be changing or deleting.
 
+## Practice Time
+
+
+## Next Steps
+- Intro to Python + MySQL.
+- Executing `INSERT`, `UPDATE`, `DELETE` from Python.
+- Creating Reusable Functions.
+- Mini Project: Console App.
+- **Challenge**!

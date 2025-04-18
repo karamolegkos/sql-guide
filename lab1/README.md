@@ -436,4 +436,5 @@ Make queries to retrieve the following information:
 - Introduction to `JOIN`.
 - Aggregation Functions.
 - `GROUP BY` and `HAVING`.
+- SQL Subqueries.
 - `UPDATE` and `DELETE`.
