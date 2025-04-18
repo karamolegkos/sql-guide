@@ -74,12 +74,8 @@ Connects students to courses and stores their grades.
   - `course_id` → links to `Courses`.
 
 How They're Connected
-```
-Students      Enrollments       Courses
-----------    -------------     ----------
-student_id ←  student_id        
-              course_id   →     course_id
-```
+![Relational Model of the Example](./relational-model.png)
+
 This means:
 - One student can enroll in many courses.
 - One course can have many students.
