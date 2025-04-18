@@ -417,7 +417,34 @@ You’ll be using the `SchoolDB` database and its `Students`, `Courses`, and `En
 17. Show students who **are enrolled** in **both "Mathematics" and "Biology"**.
 
 ## Practice Time 2
+Your task is to design a simple relational **database schema** for a warehouse system where **Automated Guided Vehicles (AGVs)** help **Employees** handle **Storage Units**.
 
+This database will help manage operations like tracking which AGVs are available, which employees are responsible for which AGVs, and what items are stored where.
+
+Based on the description below, **identify the tables**, their **columns**, and the **relationships** between them. Then, draw the **ER diagram** or write the `CREATE TABLE` **statements** to implement the schema.
+
+### Scenario
+- The warehouse has **multiple AGVs** that move items around.
+- Each **AGV** has an ID, model name, and availability status.
+- There are multiple **Employees** trained to operate AGVs. An **AGV can be operated by multiple employees**, and each employee can handle **multiple AGVs**.
+- Items are stored in **Storage Units** (e.g., shelves, racks), each with a location code and capacity.
+- Each **Item** has a name, SKU, weight, and is stored in **one Storage Unit**.
+- The system should track the **assignments** of employees to AGVs.
+
+### Goals
+Design a schema that includes at least the following five tables:
+- AGVs
+- Employees
+- Storage_Units
+- Items
+- AGV_Assignments
+
+You can add your own tables / fields **if needed**.
+
+### Tips
+- Keep the design simple, don't overcomplicate it.
+- You can draw a schema as a PNG or write CREATE TABLE statements.
+- Aim for clarity in naming and structure.
 
 ## Next Steps
 - Intro to Python + MySQL.
