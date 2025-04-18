@@ -432,8 +432,8 @@ Make queries to retrieve the following information:
   - Try to use `JOIN` and/or `GROUP BY` for this.
 
 ## Next Steps
+- Relational Schema.
 - Introduction to `JOIN`.
 - Aggregation Functions.
 - `GROUP BY` and `HAVING`.
 - `UPDATE` and `DELETE`.
-- Relational Schema.
