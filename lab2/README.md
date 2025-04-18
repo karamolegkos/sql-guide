@@ -431,7 +431,7 @@ Based on the description below, **identify the tables**, their **columns**, and 
 - Each **Item** has a name, SKU, weight, and is stored in **one Storage Unit**.
 - The system should track the **assignments** of employees to AGVs.
 
-### Goals
+### Goal
 Design a schema that includes at least the following five tables:
 - AGVs
 - Employees
