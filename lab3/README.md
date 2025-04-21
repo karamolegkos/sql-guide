@@ -50,7 +50,7 @@ pip uninstall virtualenv
 
 ## Intro to Python
 
-### Executinng a Python Script
+### Executing a Python Script
 To explain how to run a Python Script, the following code will be used as an example. The code is stored in a file named `my_file.py`:
 ```python
 # Flask example
