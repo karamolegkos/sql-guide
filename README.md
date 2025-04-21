@@ -16,3 +16,10 @@ Introduction to SQL with MySQL
   - [`GROUP BY` and `HAVING`](./lab2/README.md/#group-by-and-having)
   - [SQL Subqueries](./lab2/README.md/#sql-subqueries)
   - [`UPDATE` and `DELETE`](./lab2/README.md/#update-and-delete)
+- [MySQL with Python](/lab3/README.md)
+  - [Intro to Python](./lab3/#intro-to-python)
+  - [Python and MySQL](./lab3/#python-and-mysql)
+  - [Executing SQL Queries from Python](./lab3/#executing-sql-queries-from-python)
+  - [Creating Reusable Functions](./lab3/#creating-reusable-functions)
+  - [Creating a Console App](./lab3/#creating-a-console-app)
+  - [Challenge](./lab3/#challenge)!
