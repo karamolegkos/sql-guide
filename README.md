@@ -22,4 +22,4 @@ Introduction to SQL with MySQL
   - [Executing SQL Queries from Python](./lab3/#executing-sql-queries-from-python)
   - [Creating Reusable Functions](./lab3/#creating-reusable-functions)
   - [Creating a Console App](./lab3/#creating-a-console-app)
-  - [Challenge](./lab3/#challenge)!
+  - [Challenge](./lab3/#challenge)
