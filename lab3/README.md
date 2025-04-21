@@ -604,6 +604,10 @@ python -m venv venv
 ```shell
 .\my_venv\Scripts\activate
 ```
+- Install the MySQL Python Library:
+```shell
+pip install mysql-connector-python
+```
 - Execute the Python file:
 ```shell
 python student_manager.py
