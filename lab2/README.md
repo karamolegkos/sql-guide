@@ -24,7 +24,7 @@ Open up MySQL Workbench and connect to your local MySQL DBMS with your credentia
 On a query file inside the MySQL Workbench and execute the content in [this](./example-schema.sql) SQL file.
 
 ### Uninstallation
-To uninstall your database you can run the following command in a Terminal/CMD
+To uninstall your database you can run the following command in a Terminal/CMD:
 ```docker
 docker rm -f my-own-mysql
 ```
@@ -447,8 +447,9 @@ You can add your own tables / fields **if needed**.
 - Aim for clarity in naming and structure.
 
 ## Next Steps
-- Intro to Python + MySQL.
-- Executing `INSERT`, `UPDATE`, `DELETE` from Python.
+- Intro to Python.
+- Python and MySQL.
+- Executing SQL Queries from Python.
 - Creating Reusable Functions.
-- Mini Project: Console App.
+- Creating a Console App.
 - **Challenge**!
