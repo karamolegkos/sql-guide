@@ -103,7 +103,7 @@ deactivate
 ### Variables and Printing
 In the following Examples you can see scripts and their corresponding results. Try to execute the examples on your machine as well, or use a site such as [Programiz](https://www.programiz.com/python-programming/online-compiler/) to execute them online.
 
-Variables are like labeled boxes where you can store values. The `print()` function lets you see the result of your code.
+👉 Variables are like labeled boxes where you can store values. The `print()` function lets you see the result of your code.
 ```python
 # This is a single line comment in Python
 
@@ -126,7 +126,7 @@ Result:
 ### Functions
 By using `def` we can create Python functions by specifying their input and output. A function can exist without any input or output.
 
-Functions are blocks of reusable code. You can use them to organize your code better and avoid repetition.
+👉 Functions are blocks of reusable code. You can use them to organize your code better and avoid repetition.
 ```python
 def add(x, y):      # This function adds two numbers
     return x + y
@@ -153,7 +153,7 @@ In the example below, we define a class called `Point` that represents a point i
 
 The `__init__` function is a special function called a **constructor**. It is automatically called when we create a new object from the class. The constructor lets us set up the initial values for the object’s data.
 
-We also define methods (functions inside a class) to set and get the values of `x` and `y`. This is an example of **encapsulation**, which means hiding the internal data of the object and interacting with it through functions.
+👉 We also define methods (functions inside a class) to set and get the values of `x` and `y`. This is an example of **encapsulation**, which means hiding the internal data of the object and interacting with it through functions.
 ```python
 class Point:
     def __init__(self, x=0, y=0):  # Constructor
@@ -191,7 +191,7 @@ This is how you create and use classes and objects in Python. You can think of i
 ### Comparison Operators
 [Here](https://www.w3schools.com/python/python_operators.asp) you can find all the Python Operators.
 
-Comparison Operators are used to compare values.
+👉 Comparison Operators are used to compare values.
 ```python
 a = 10
 b = 15
@@ -210,7 +210,7 @@ Results:
 ```
 
 ### Logical Operators
-Logical Operators are used to combine conditions or check if one thing is inside another.
+👉 Logical Operators are used to combine conditions or check if one thing is inside another.
 ```Python
 a = "this is a string"
 b = "this"
@@ -236,7 +236,7 @@ b is not in a
 ```
 
 ### Simple For Loop
-Used to repeat a block of code a certain number of times.
+👉 Used to repeat a block of code a certain number of times.
 ```Python
 printme10times = "hello world"
 
@@ -259,7 +259,7 @@ hello world
 ```
 
 ### Simple While Loop
-A While loop is running as long as a condition is `True`.
+👉 A While loop is running as long as a condition is `True`.
 ```Python
 count = 1  # Initialize a counter variable
 
@@ -280,7 +280,7 @@ Result:
 5
 Loop completed!
 ```
-Below is an example with User Input as well:
+👉 Below is an example with User Input as well:
 ```Python
 user_input = ''  # Initialize the variable to hold user input
 
@@ -301,7 +301,7 @@ You've exited the loop!
 ```
 
 ### Item Iteration
-You can loop over items in a list:
+👉 You can loop over items in a list:
 ```Python
 # Initialising a List of Items
 myList = ["apple", "lemon", "pie", 4]
@@ -319,7 +319,7 @@ this item is a / an: 4
 ```
 
 ### List Handling
-Lists are like containers that can hold multiple values:
+👉 Lists are like containers that can hold multiple values:
 ```Python
 mylist = [1, 2, 3, 4, 5]
 
@@ -346,7 +346,7 @@ d
 <class 'int'>
 <class 'list'>
 ```
-An example of a search and condition check follows:
+👉 An example of a search and condition check follows:
 ```Python
 mylist = ["apple", "lemon", "pie", "Cinnamon", "cinnamon"]
 
@@ -365,7 +365,7 @@ Not here
 Not here
 Found it!
 ```
-Example to update specific items:
+👉 Example to update specific items:
 ```Python
 mylist = [1, 2, 3, 4, 5]
 
@@ -387,7 +387,7 @@ Result:
 ```
 
 ### Initialization and Use of Dictionaries
-Dictionaries store data using key-value pairs.
+👉 Dictionaries store data using key-value pairs.
 ```Python
 my_dict = {
     "name": "Student",  # Key : Value
@@ -406,7 +406,7 @@ Result:
 {'name': 'Student', 'course': 'Information Systems', 'year': 2020, 'course_id': 'DS-512'}
 ```
 
-Modify existing values:
+👉 Modify existing values:
 ```Python
 my_dict = {
     "name": "Student",
@@ -426,7 +426,7 @@ Result:
 ```
 
 ### Loops and Dictionaries
-Loop through a dictionary to access keys and values.
+👉 Loop through a dictionary to access keys and values.
 ```Python
 my_dict = {
     "name": ["S1", "S2"],
@@ -453,7 +453,7 @@ The value is: 2020
 ### Dictionaries and Lists
 You can combine lists and dictionaries for more complex data. 
 
-Check if a course exists:
+👉 Check if a course exists:
 ```Python
 my_list = [
     {"title": "Information Systems", "id": "DS-512"},
@@ -470,7 +470,7 @@ Result:
 ```
 There is a course with that ID.
 ```
-Calculate the average grade:
+👉 Calculate the average grade:
 ```Python
 my_dict = {"grades" : [5, 6, 4, 7, 19]}
 
